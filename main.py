@@ -27,7 +27,7 @@ def fetch_wellfound():
 
         if any(x in company.lower() for x in ["emergent", "bae", "goldbelt", "crowdstrike"]):
             continue
-        if not ("no experience" in desc or "entry-level" in title.lower()):
+        if not ("no experience" in desc or "entry-level" in title.lower()) or not any(x in title.lower() for x in ["data entry", "moderation", "moderator", "virtual assistant", "transcription", "spanish"]):
             continue
 
         days_ago = int(re.search(r"(\d+)", post_date_text).group(1))
